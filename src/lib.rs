@@ -76,12 +76,20 @@ an optimized set of tools for computer graphics and physics. Those features incl
 #![warn(missing_docs)]
 #![doc(html_root_url = "http://nalgebra.org/doc")]
 
-extern crate rustc_serialize;
+#![cfg_attr(feature = "serde-serialize", feature(custom_derive, plugin))]
+#![cfg_attr(feature = "serde-serialize", plugin(serde_macros))]
+
 extern crate rand;
 extern crate num;
 
 #[cfg(feature="generic_sizes")]
 extern crate generic_array;
+
+#[cfg(feature = "rustc-serialize")]
+extern crate rustc_serialize;
+
+#[cfg(feature = "serde-serialize")]
+extern crate serde;
 
 #[cfg(feature="arbitrary")]
 extern crate quickcheck;

@@ -10,6 +10,8 @@ use quickcheck::{Arbitrary, Gen};
 /// This maps a frustrum cube to the unit cube with corners varying from `(-1, -1, -1)` to
 /// `(1, 1, 1)`. Reading or modifying its individual properties is cheap but applying the
 /// transformation is costly.
+#[cfg_attr(feature = "rustc-serialize", derive(RustcEncodable, RustcDecodable))]
+#[cfg_attr(feature = "serde-serialize", derive(Serialize, Deserialize))]
 #[derive(Eq, PartialEq, RustcEncodable, RustcDecodable, Clone, Debug, Copy)]
 pub struct Perspective3<N> {
     aspect: N,
@@ -23,6 +25,8 @@ pub struct Perspective3<N> {
 /// This maps a frustrum to the unit cube with corners varying from `(-1, -1, -1)` to
 /// `(1, 1, 1)`. Reading or modifying its individual properties is costly but applying the
 /// transformation is cheap.
+#[cfg_attr(feature = "rustc-serialize", derive(RustcEncodable, RustcDecodable))]
+#[cfg_attr(feature = "serde-serialize", derive(Serialize, Deserialize))]
 #[derive(Eq, PartialEq, RustcEncodable, RustcDecodable, Clone, Debug, Copy)]
 pub struct PerspectiveMatrix3<N> {
     matrix: Matrix4<N>

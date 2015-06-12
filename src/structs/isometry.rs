@@ -22,6 +22,8 @@ use quickcheck::{Arbitrary, Gen};
 /// affected by the translational component of this transformation while points `Point2` are.
 /// Isometries conserve angles and distances, hence do not allow shearing nor scaling.
 #[repr(C)]
+#[cfg_attr(feature = "rustc-serialize", derive(RustcEncodable, RustcDecodable))]
+#[cfg_attr(feature = "serde-serialize", derive(Serialize, Deserialize))]
 #[derive(Eq, PartialEq, RustcEncodable, RustcDecodable, Clone, Debug, Copy)]
 pub struct Isometry2<N> {
     /// The rotation applicable by this isometry.
@@ -36,6 +38,8 @@ pub struct Isometry2<N> {
 /// affected by the translational component of this transformation while points `Point3` are.
 /// Isometries conserve angles and distances, hence do not allow shearing nor scaling.
 #[repr(C)]
+#[cfg_attr(feature = "rustc-serialize", derive(RustcEncodable, RustcDecodable))]
+#[cfg_attr(feature = "serde-serialize", derive(Serialize, Deserialize))]
 #[derive(Eq, PartialEq, RustcEncodable, RustcDecodable, Clone, Debug, Copy)]
 pub struct Isometry3<N> {
     /// The rotation applicable by this isometry.

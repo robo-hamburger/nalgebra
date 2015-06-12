@@ -28,6 +28,8 @@ use_matrix_group_modules!();
 
 /// Special identity matrix. All its operation are no-ops.
 #[repr(C)]
+#[cfg_attr(feature = "rustc-serialize", derive(RustcEncodable, RustcDecodable))]
+#[cfg_attr(feature = "serde-serialize", derive(Serialize, Deserialize))]
 #[derive(Eq, PartialEq, RustcEncodable, RustcDecodable, Clone, Debug, Copy)]
 pub struct Identity;
 
@@ -47,6 +49,8 @@ impl fmt::Display for Identity {
 
 /// Square matrix of dimension 1.
 #[repr(C)]
+#[cfg_attr(feature = "rustc-serialize", derive(RustcEncodable, RustcDecodable))]
+#[cfg_attr(feature = "serde-serialize", derive(Serialize, Deserialize))]
 #[derive(Eq, PartialEq, RustcEncodable, RustcDecodable, Clone, Hash, Debug, Copy)]
 pub struct Matrix1<N> {
     pub m11: N
@@ -72,6 +76,8 @@ mat_display_impl!(Matrix1, 1);
 
 /// Square matrix of dimension 2.
 #[repr(C)]
+#[cfg_attr(feature = "rustc-serialize", derive(RustcEncodable, RustcDecodable))]
+#[cfg_attr(feature = "serde-serialize", derive(Serialize, Deserialize))]
 #[derive(Eq, PartialEq, RustcEncodable, RustcDecodable, Clone, Hash, Debug, Copy)]
 pub struct Matrix2<N> {
     pub m11: N, pub m21: N,
@@ -98,6 +104,8 @@ mat_display_impl!(Matrix2, 2);
 
 /// Square matrix of dimension 3.
 #[repr(C)]
+#[cfg_attr(feature = "rustc-serialize", derive(RustcEncodable, RustcDecodable))]
+#[cfg_attr(feature = "serde-serialize", derive(Serialize, Deserialize))]
 #[derive(Eq, PartialEq, RustcEncodable, RustcDecodable, Clone, Hash, Debug, Copy)]
 pub struct Matrix3<N> {
     pub m11: N, pub m21: N, pub m31: N,
@@ -135,6 +143,8 @@ mat_display_impl!(Matrix3, 3);
 
 /// Square matrix of dimension 4.
 #[repr(C)]
+#[cfg_attr(feature = "rustc-serialize", derive(RustcEncodable, RustcDecodable))]
+#[cfg_attr(feature = "serde-serialize", derive(Serialize, Deserialize))]
 #[derive(Eq, PartialEq, RustcEncodable, RustcDecodable, Clone, Hash, Debug, Copy)]
 pub struct Matrix4<N> {
     pub m11: N, pub m21: N, pub m31: N, pub m41: N,

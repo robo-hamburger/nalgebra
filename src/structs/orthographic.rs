@@ -10,6 +10,8 @@ use quickcheck::{Arbitrary, Gen};
 /// This flips the `z` axis and maps a axis-aligned cube to the unit cube with corners varying from
 /// `(-1, -1, -1)` to `(1, 1, 1)`. Reading or modifying its individual properties is cheap but
 /// applying the transformation is costly.
+#[cfg_attr(feature = "rustc-serialize", derive(RustcEncodable, RustcDecodable))]
+#[cfg_attr(feature = "serde-serialize", derive(Serialize, Deserialize))]
 #[derive(Eq, PartialEq, RustcEncodable, RustcDecodable, Clone, Debug, Copy)]
 pub struct Orthographic3<N> {
     left:   N,
@@ -25,6 +27,8 @@ pub struct Orthographic3<N> {
 /// This flips the `z` axis and maps a axis-aligned cube to the unit cube with corners varying from
 /// `(-1, -1, -1)` to `(1, 1, 1)`. Reading or modifying its individual properties is costly but
 /// applying the transformation is cheap.
+#[cfg_attr(feature = "rustc-serialize", derive(RustcEncodable, RustcDecodable))]
+#[cfg_attr(feature = "serde-serialize", derive(Serialize, Deserialize))]
 #[derive(Eq, PartialEq, RustcEncodable, RustcDecodable, Clone, Debug, Copy)]
 pub struct OrthographicMatrix3<N> {
     matrix: Matrix4<N>

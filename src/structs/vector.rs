@@ -46,6 +46,8 @@ vec_from_homogeneous_impl!(Vector1, Vector2, y, x);
 /// The main difference between a point and a vector is that a vector is not affected by
 /// translations.
 #[repr(C)]
+#[cfg_attr(feature = "rustc-serialize", derive(RustcEncodable, RustcDecodable))]
+#[cfg_attr(feature = "serde-serialize", derive(Serialize, Deserialize))]
 #[derive(Eq, PartialEq, RustcEncodable, RustcDecodable, Clone, Hash, Debug, Copy)]
 pub struct Vector2<N> {
     /// First component of the vector.
@@ -68,6 +70,8 @@ vec_from_homogeneous_impl!(Vector2, Vector3, z, x, y);
 /// The main difference between a point and a vector is that a vector is not affected by
 /// translations.
 #[repr(C)]
+#[cfg_attr(feature = "rustc-serialize", derive(RustcEncodable, RustcDecodable))]
+#[cfg_attr(feature = "serde-serialize", derive(Serialize, Deserialize))]
 #[derive(Eq, PartialEq, RustcEncodable, RustcDecodable, Clone, Hash, Debug, Copy)]
 pub struct Vector3<N> {
     /// First component of the vector.
@@ -91,6 +95,8 @@ vec_from_homogeneous_impl!(Vector3, Vector4, w, x, y, z);
 /// The main difference between a point and a vector is that a vector is not affected by
 /// translations.
 #[repr(C)]
+#[cfg_attr(feature = "rustc-serialize", derive(RustcEncodable, RustcDecodable))]
+#[cfg_attr(feature = "serde-serialize", derive(Serialize, Deserialize))]
 #[derive(Eq, PartialEq, RustcEncodable, RustcDecodable, Clone, Hash, Debug, Copy)]
 pub struct Vector4<N> {
     /// First component of the vector.
@@ -117,6 +123,8 @@ vec_from_homogeneous_impl!(Vector4, Vector5, a, x, y, z, w);
 /// The main difference between a point and a vector is that a vector is not affected by
 /// translations.
 #[repr(C)]
+#[cfg_attr(feature = "rustc-serialize", derive(RustcEncodable, RustcDecodable))]
+#[cfg_attr(feature = "serde-serialize", derive(Serialize, Deserialize))]
 #[derive(Eq, PartialEq, RustcEncodable, RustcDecodable, Clone, Hash, Debug, Copy)]
 pub struct Vector5<N> {
     /// First component of the vector.
@@ -144,6 +152,8 @@ vec_from_homogeneous_impl!(Vector5, Vector6, b, x, y, z, w, a);
 /// The main difference between a point and a vector is that a vector is not affected by
 /// translations.
 #[repr(C)]
+#[cfg_attr(feature = "rustc-serialize", derive(RustcEncodable, RustcDecodable))]
+#[cfg_attr(feature = "serde-serialize", derive(Serialize, Deserialize))]
 #[derive(Eq, PartialEq, RustcEncodable, RustcDecodable, Clone, Hash, Debug, Copy)]
 pub struct Vector6<N> {
     /// First component of the vector.

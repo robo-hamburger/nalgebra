@@ -19,6 +19,8 @@ use quickcheck::{Arbitrary, Gen};
 
 /// A quaternion. See the `UnitQuaternion` type alias for a quaternion that can be used as a rotation.
 #[repr(C)]
+#[cfg_attr(feature = "rustc-serialize", derive(RustcEncodable, RustcDecodable))]
+#[cfg_attr(feature = "serde-serialize", derive(Serialize, Deserialize))]
 #[derive(Eq, PartialEq, RustcEncodable, RustcDecodable, Clone, Hash, Debug, Copy)]
 pub struct Quaternion<N> {
     /// The scalar component of the quaternion.

@@ -7,6 +7,8 @@ use std::cmp::Ordering;
 use traits::structure::SquareMatrix;
 
 /// Result of a partial ordering.
+#[cfg_attr(feature = "rustc-serialize", derive(RustcEncodable, RustcDecodable))]
+#[cfg_attr(feature = "serde-serialize", derive(Serialize, Deserialize))]
 #[derive(Eq, PartialEq, RustcEncodable, RustcDecodable, Clone, Debug, Copy)]
 pub enum PartialOrdering {
     /// Result of a strict comparison.
