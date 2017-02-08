@@ -25,7 +25,6 @@ use_euclidean_space_modules!();
 /// The main difference between a point and a vector is that a vector is not affected by
 /// translations.
 #[repr(C)]
-#[cfg_attr(feature = "rustc-serialize", derive(RustcEncodable, RustcDecodable))]
 #[cfg_attr(feature = "serde-serialize", derive(Serialize, Deserialize))]
 #[derive(Eq, PartialEq, RustcEncodable, RustcDecodable, Clone, Hash, Debug, Copy)]
 pub struct Point1<N> {
@@ -42,7 +41,6 @@ from_iterator_impl!(Point1, iterator);
 /// The main difference between a point and a vector is that a vector is not affected by
 /// translations.
 #[repr(C)]
-#[cfg_attr(feature = "rustc-serialize", derive(RustcEncodable, RustcDecodable))]
 #[cfg_attr(feature = "serde-serialize", derive(Serialize, Deserialize))]
 #[derive(Eq, PartialEq, RustcEncodable, RustcDecodable, Clone, Hash, Debug, Copy)]
 pub struct Point2<N> {
@@ -61,7 +59,6 @@ from_iterator_impl!(Point2, iterator, iterator);
 /// The main difference between a point and a vector is that a vector is not affected by
 /// translations.
 #[repr(C)]
-#[cfg_attr(feature = "rustc-serialize", derive(RustcEncodable, RustcDecodable))]
 #[cfg_attr(feature = "serde-serialize", derive(Serialize, Deserialize))]
 #[derive(Eq, PartialEq, RustcEncodable, RustcDecodable, Clone, Hash, Debug, Copy)]
 pub struct Point3<N> {
@@ -82,7 +79,6 @@ from_iterator_impl!(Point3, iterator, iterator, iterator);
 /// The main difference between a point and a vector is that a vector is not affected by
 /// translations.
 #[repr(C)]
-#[cfg_attr(feature = "rustc-serialize", derive(RustcEncodable, RustcDecodable))]
 #[cfg_attr(feature = "serde-serialize", derive(Serialize, Deserialize))]
 #[derive(Eq, PartialEq, RustcEncodable, RustcDecodable, Clone, Hash, Debug, Copy)]
 pub struct Point4<N> {
@@ -105,7 +101,6 @@ from_iterator_impl!(Point4, iterator, iterator, iterator, iterator);
 /// The main difference between a point and a vector is that a vector is not affected by
 /// translations.
 #[repr(C)]
-#[cfg_attr(feature = "rustc-serialize", derive(RustcEncodable, RustcDecodable))]
 #[cfg_attr(feature = "serde-serialize", derive(Serialize, Deserialize))]
 #[derive(Eq, PartialEq, RustcEncodable, RustcDecodable, Clone, Hash, Debug, Copy)]
 pub struct Point5<N> {
@@ -130,7 +125,6 @@ from_iterator_impl!(Point5, iterator, iterator, iterator, iterator, iterator);
 /// The main difference between a point and a vector is that a vector is not affected by
 /// translations.
 #[repr(C)]
-#[cfg_attr(feature = "rustc-serialize", derive(RustcEncodable, RustcDecodable))]
 #[cfg_attr(feature = "serde-serialize", derive(Serialize, Deserialize))]
 #[derive(Eq, PartialEq, RustcEncodable, RustcDecodable, Clone, Hash, Debug, Copy)]
 pub struct Point6<N> {

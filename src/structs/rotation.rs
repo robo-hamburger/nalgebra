@@ -20,7 +20,6 @@ use_special_orthogonal_group_modules!();
 
 /// Two dimensional rotation matrix.
 #[repr(C)]
-#[cfg_attr(feature = "rustc-serialize", derive(RustcEncodable, RustcDecodable))]
 #[cfg_attr(feature = "serde-serialize", derive(Serialize, Deserialize))]
 #[derive(Eq, PartialEq, RustcEncodable, RustcDecodable, Clone, Debug, Hash, Copy)]
 pub struct Rotation2<N> {
@@ -116,7 +115,6 @@ impl<N: BaseFloat> AbsoluteRotate<Vector2<N>> for Rotation2<N> {
  */
 /// Three dimensional rotation matrix.
 #[repr(C)]
-#[cfg_attr(feature = "rustc-serialize", derive(RustcEncodable, RustcDecodable))]
 #[cfg_attr(feature = "serde-serialize", derive(Serialize, Deserialize))]
 #[derive(Eq, PartialEq, RustcEncodable, RustcDecodable, Clone, Debug, Hash, Copy)]
 pub struct Rotation3<N> {
